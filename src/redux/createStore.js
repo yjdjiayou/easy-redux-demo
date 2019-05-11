@@ -14,6 +14,8 @@ export default function createStore(reducer,preloadedState){
     
     function dispatch(action){
         if(!isPlainObject(action)){
+            //isPlainObject判断一个对象是否是一个纯对象
+            //如果传进来的是一个实例对象，就报错
             throw new Error('action必须是一个纯对象');
         }
         if(typeof action.type =='undefined'){
